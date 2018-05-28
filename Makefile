@@ -6,3 +6,6 @@ build: package
 	docker push myguddy/sam-springboot-redis:latest
 run:
 	docker run -d --name sam-springboot-redis --link local-redis:session-redis -p 127.0.0.1:8081:8080 myguddy/sam-springboot-redis:latest
+
+
+# kubectl scale deployments/springboot-redis --replicas 2

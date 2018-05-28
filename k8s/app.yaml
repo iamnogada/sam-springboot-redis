@@ -37,3 +37,9 @@ spec:
           image: myguddy/sam-springboot-redis
           ports:
           - containerPort: 8080
+          resources:
+            requests:
+              cpu: "200m"
+            limits:
+              memory: "1Gi"
+              cpu: "500m"
