@@ -19,6 +19,7 @@ public class HomeController {
 	
     @RequestMapping("/")
 	public String index(Model model, HttpSession session) {
+		logger.info("index called");
 		String loginUserName = (String)session.getAttribute("user");
 		if(null != loginUserName){
 			model.addAttribute("uname",loginUserName);
@@ -34,6 +35,7 @@ public class HomeController {
 						@RequestParam("uname") String uname, 
 						@RequestParam("password") String password,
 						HttpSession session){
+		logger.info("login called");
 		session.setAttribute("user", uname);
 		model.addAttribute("uname", uname);
 		
@@ -41,8 +43,9 @@ public class HomeController {
 	}
 	@RequestMapping("/logout")
 	public String logout(HttpSession session){
+		logger.info("logout called");
 		session.invalidate();
-		return "index";
+		return "redirect:/";
 	}
 }
 

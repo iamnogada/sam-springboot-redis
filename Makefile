@@ -1,0 +1,1 @@
+docker run -d --name sam-springboot-redis --link local-redis:session-redis -p 127.0.0.1:8081:8080 sam-springboot-redis:v0.0.3
